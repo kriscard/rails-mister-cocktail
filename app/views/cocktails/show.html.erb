@@ -2,7 +2,8 @@
 
 <% if @cocktail.doses.present? %>
   <% @cocktail.doses.each do |dose|%>
-  <p><strong>Dose:</strong><%= dose.description%>  <em><%=dose.ingredient.name%></em><%= link_to "delete",delete_path(dose) %></p>
+  <p><strong>Dose:</strong><%= dose.description%>  <em><%=dose.ingredient.name%></em><%= link_to "delete", dose_path(dose.id), method: :delete,
+      data: { confirm: "Are you sure?" }%></p>
    <%end%>
   <%end %>
 

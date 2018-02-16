@@ -7,20 +7,23 @@
   <%= image_tag("bartender.jpg", alt: 'bartender', class: 'bartender') %>
   <div class="tipstext">
     <h4> Our professionnal tips </h4>
-    <p> Add more rum on this shit... It will be nasty !!! </p>
+    <p> Add more rum on this shit... It will be more nasty !!! </p>
   </div>
 </div>
 
 <div id="wrapperqshow">
-  <% if @cocktail.doses.present? %>
-    <% @cocktail.doses.each do |dose|%>
-    <p><strong>Dose:</strong><%= dose.description%>  <em><%=dose.ingredient.name%></em><%= link_to "delete", dose_path(dose.id), method: :delete,
-  data: { confirm: "Are you sure?" }%></p>
-  <%end%>
-  <%end %>
+  <div class="dosedescription">
+    <h4>Dose : </h4>
+    <% if @cocktail.doses.present? %>
+      <% @cocktail.doses.each do |dose|%>
+      <p><%= dose.description%> of <%=dose.ingredient.name%><br><%= link_to "delete", dose_path(dose.id), method: :delete,
+    data: { confirm: "Are you sure?" }%></p>
+    <%end%>
+    <%end %>
+  </div>
 
   <div class="buttondrinks">
-    <p><%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %></p>
+    <p><%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: 'btn btn-success' %></p>
 
     <p><%= link_to "Back to the list", cocktails_path, class: 'btn btn-primary'%></p>
   </div>

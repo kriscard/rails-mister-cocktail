@@ -1,6 +1,31 @@
 
-<h1>List of cocktails</h1>
-<% @cocktails.each do |cocktail|%>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  <% end %>
-<%= link_to 'Add a cocktail', new_cocktail_path, class:'btn btn-primary'%>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1490324120634-0fa86c62d6c1?ixlib=rb-0.3.5&s=3da77639cbbd038d5473d1ab53433b2d&auto=format&fit=crop&w=2559&q=80');">
+  <div class="banner-content">
+    <h1>Rhum Cocktail Club</h1>
+    <p>For the love of... Rhummmm !!</p>
+    <a class="btn btn-primary btn-lg" href="#ancrelist">Take a drink</a>
+  </div>
+</div>
+
+<div id="wrapper">
+  <h1 class="cocktail_title" id="ancrelist">List of cocktails</h1>
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail|%>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/collection/cocktail');">
+          <div class="card-description">
+            <li><p><%= link_to cocktail.name, cocktail_path(cocktail) %></p></li>
+<!--             <a class="card-link" href="#" ></a>
+ -->          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div id="wrapperadd" class="addcocktail">
+  <h3>Add your cocktail</h3>
+  <p class= "addcocktaildescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac urna id sapien volutpat malesuada eu ac nisl. Maecenas elementum eleifend nunc, eu placerat orci maximus tristique. Donec lacinia tempor efficitur.</p>
+  <center><a class="linkadd"><%= link_to 'Add a cocktail', new_cocktail_path, class:'btn btn-primary'%></a></center>
+</div>

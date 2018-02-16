@@ -1,5 +1,18 @@
-<h1><%=@cocktail.name %></h1>
+<div class="bannershow">
+  <div class="banner-content">
+    <h1><%=@cocktail.name %></h1>
+  </div>
+</div>
 
+<div class="container">
+  <div class="tips">
+  <%= image_tag("bartender.jpg", alt: 'bartender', class: 'bartender') %>
+  <h4>Our professionnal tips</h4>
+    <p>Add more rum on this shit... It will be nasty !!!</p>
+    </div>
+</div>
+
+<<div id="wrapperqshow">
 <% if @cocktail.doses.present? %>
   <% @cocktail.doses.each do |dose|%>
   <p><strong>Dose:</strong><%= dose.description%>  <em><%=dose.ingredient.name%></em><%= link_to "delete", dose_path(dose.id), method: :delete,
@@ -10,3 +23,4 @@
 <p><%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %></p>
 
 <p><%= link_to "Back to the list", cocktails_path, class: 'btn btn-primary'%></p>
+</div>

@@ -18,15 +18,29 @@ p {
 
 .tips {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  // align-items: center;
+  padding: 10px;
+  // background-color:
 }
 
 .tipstext {
-  display: flex;
   flex-direction: column;
-  text-align:left;
+  padding-top: 120px;
 }
 
 #wrapperqshow {
   background-img: asset-url('greenlemon.jpg')
+}
+
+.buttondrinks {
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  margin: 20px;
+}
+
+.buttondrinks a {
+  margin: 10px;
+
 }

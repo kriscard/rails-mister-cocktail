@@ -21,6 +21,12 @@ p {
   justify-content: space-around;
 }
 
+.tipstext {
+  display: flex;
+  flex-direction: column;
+  text-align:left;
+}
+
 #wrapperqshow {
   background-img: asset-url('greenlemon.jpg')
 }
